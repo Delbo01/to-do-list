@@ -12,10 +12,10 @@
 class Activity{
 private:
     Date dateOfDeadline;
-    std::string activity;
+    std::string task;
     bool done;
 public:
-    Activity(Date d,std::string a, bool done): dateOfDeadline(d),activity(a), done(done){}
+    Activity(Date d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
     ~Activity()=default;
 
     const Date &getDateOfDeadline() const {
@@ -27,11 +27,11 @@ public:
     }
 
     const std::string &getActivity() const {
-        return activity;
+        return task;
     }
 
     void setActivity(const std::string &activity) {
-        Activity::activity = activity;
+        Activity::task = activity;
     }
 
     bool isDone() const {
