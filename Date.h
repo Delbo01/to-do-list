@@ -12,8 +12,10 @@ private:
     int year;
     int month;
     int day;
+    int hour;
+    int minute;
 public:
-    explicit Date(int y = 1970,int m= 1, int d=1):year(y),month(m),day(d){}
+    Date(int y,int m, int d,int h,int mi):year(y),month(m),day(d),hour(h), minute(mi){}
     ~Date()=default;
 
     int getYear() const {
@@ -67,6 +69,28 @@ public:
             else
                 Date::day = day;
         }
+    }
+
+    int getHour() const {
+        return hour;
+    }
+
+    void setHour(int hour) {
+        if (hour<0 || hour>23)
+            throw (std::out_of_range("OUT OF RANGE"));
+        else
+            Date::hour=hour;
+    }
+
+    int getMinute() const {
+        return minute;
+    }
+
+    void setMinute(int minute) {
+        if (minute<0 || minute>59)
+            throw (std::out_of_range("OUT OF RANGE"));
+        else
+            Date::minute = minute;
     }
 };
 #endif //DATE_DATE_H
