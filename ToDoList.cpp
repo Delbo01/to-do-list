@@ -2,6 +2,7 @@
 // Created by leonardo Del Bene on 20/08/21.
 //
 
+#include <iostream>
 #include "ToDoList.h"
 
 void toDoList::removeActivity(std::unique_ptr<Activity> a) {
