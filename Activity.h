@@ -11,22 +11,26 @@
 
 class Activity{
 private:
-    Date dateOfDeadline;
+    Date* dateOfDeadline;
     std::string task;
     bool done;
 public:
-    Activity(Date d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
+    Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
     ~Activity()=default;
 
     const Date &getDateOfDeadline() const {
-        return dateOfDeadline;
+        return *dateOfDeadline;
     }
 
-    void setDateOfDeadline(const Date &dateOfDeadline) {
-        Activity::dateOfDeadline = dateOfDeadline;
+    void setDateOfDeadline(const Date &date) {
+        dateOfDeadline->setYear(date.getYear());
+        dateOfDeadline->setMonth(date.getMonth());
+        dateOfDeadline->setDay(date.getDay());
+        dateOfDeadline->setHour(date.getHour());
+        dateOfDeadline->setMinute(date.getMinute());
     }
 
-    const std::string &getActivity() const {
+    const std::string &getTask() const {
         return task;
     }
 
