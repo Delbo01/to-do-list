@@ -8,13 +8,13 @@
 #include <list>
 #include <string>
 
-class toDoList{
+class ToDoList{
 private:
     std::list<std::unique_ptr<Activity>> list;
     std::string title;
 public:
-    explicit toDoList(std::string t):title(t){}
-    ~toDoList()=default;
+    explicit ToDoList(std::string t): title(t){}
+    ~ToDoList()=default;
 
     void addActivity(std::unique_ptr<Activity> a);
     void removeActivity(std::unique_ptr<Activity> a);

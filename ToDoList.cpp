@@ -5,7 +5,7 @@
 #include <iostream>
 #include "ToDoList.h"
 
-void toDoList::removeActivity(std::unique_ptr<Activity> a) {
+void ToDoList::removeActivity(std::unique_ptr<Activity> a) {
     auto it = find(list.begin(),list.end(),a);
     if (it != list.end())
         list.remove(a);
@@ -13,15 +13,15 @@ void toDoList::removeActivity(std::unique_ptr<Activity> a) {
         std::cout<<"activity not found"<<std::endl;
 }
 
-void toDoList::addActivity(std::unique_ptr<Activity> a) {
+void ToDoList::addActivity(std::unique_ptr<Activity> a) {
     list.push_back(a);
 }
 
-void toDoList::clearAll() {
+void ToDoList::clearAll() {
     list.clear();
 }
 
-void toDoList::printActivity(std::unique_ptr<Activity> a) {
+void ToDoList::printActivity(std::unique_ptr<Activity> a) {
     auto it =find(list.begin(),list.end(),a);
     if (it != list.end()) {
         std::cout << "Date of deadline: " << (a->getDateOfDeadline()).getDay() << "/"<< (a->getDateOfDeadline()).getMonth();
@@ -31,7 +31,7 @@ void toDoList::printActivity(std::unique_ptr<Activity> a) {
     }
 }
 
-void toDoList::printAllList() {
+void ToDoList::printAllList() {
     for (auto it = list.begin();it != list.end() ; ++it) {
         if ((*it)->isDone()== false){
             std::cout<<"Date of deadline: "<<((*it)->getDateOfDeadline()).getDay()<<"/"<<((*it)->getDateOfDeadline()).getMonth();
