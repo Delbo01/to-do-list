@@ -22,8 +22,9 @@ void ToDoList::clearAll() {
 }
 
 void ToDoList::printDAyActivity(Date date) {
-    for (auto it = list.begin(); it != list.end() ; ++it) {
-        Date date1=(*it)->getDateOfDeadline();
+    Date date1(1,1,1,0,0);
+    for (auto it = list.begin(); it != list.end() ; it++) {
+        date1=(*it)->getDateOfDeadline();
         if (date==date1){
             std::cout << "Date of deadline: " << ((*it)->getDateOfDeadline()).getDay() << "/"<< ((*it)->getDateOfDeadline()).getMonth();
             std::cout<<"/"<<((*it)->getDateOfDeadline()).getYear()<<std::endl;
@@ -34,7 +35,7 @@ void ToDoList::printDAyActivity(Date date) {
 }
 
 void ToDoList::printAllList() {
-    for (auto it = list.begin();it != list.end() ; ++it) {
+    for (auto it = list.begin();it != list.end() ; it++) {
         if ((*it)->isDone()== false){
             std::cout<<"Date of deadline: "<<((*it)->getDateOfDeadline()).getDay()<<"/"<<((*it)->getDateOfDeadline()).getMonth();
             std::cout<<"/"<<((*it)->getDateOfDeadline()).getYear()<<std::endl;
