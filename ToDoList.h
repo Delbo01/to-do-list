@@ -11,9 +11,8 @@
 class ToDoList{
 private:
     std::list<std::unique_ptr<Activity>> list;
-    std::string title;
 public:
-    explicit ToDoList(std::string t): title(t){}
+    explicit ToDoList()=default;
     ~ToDoList()=default;
 
     void addActivity(std::unique_ptr<Activity> a);

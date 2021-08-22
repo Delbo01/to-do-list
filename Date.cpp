@@ -59,3 +59,11 @@ void Date::setMinute(int minute) {
         Date::minute = minute;
 }
 
+Date::Date(int y, int m, int d, int h, int mi) {
+    setYear(y);
+    setMonth(m);
+    setDay(d);
+    setHour(h);
+    setMinute(mi);
+}
+

@@ -15,7 +15,7 @@ private:
     int hour;
     int minute;
 public:
-    Date(int y,int m, int d,int h,int mi):year(y),month(m),day(d),hour(h), minute(mi){}
+    Date(int y,int m, int d,int h,int mi);
     ~Date()=default;
 
     int getYear() const {

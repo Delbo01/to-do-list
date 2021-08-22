@@ -16,6 +16,7 @@ public:
     ~Controller()=default;
 
     void write(int year,int month,int day,int hour,int minute, std::string task,bool done=false);
+    void printDayTask(int year,int month);
 };
 
 

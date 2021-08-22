@@ -8,13 +8,13 @@
 void ToDoList::removeActivity(std::unique_ptr<Activity> a) {
     auto it = find(list.begin(),list.end(),a);
     if (it != list.end())
-        list.remove(a);
+        list.remove(std::move(a));
     else
         std::cout<<"activity not found"<<std::endl;
 }
 
 void ToDoList::addActivity(std::unique_ptr<Activity> a) {
-    list.push_back(a);
+    list.push_back(std::move(a));
 }
 
 void ToDoList::clearAll() {
