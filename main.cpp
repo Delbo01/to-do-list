@@ -2,13 +2,11 @@
 #include "Date.h"
 #include "ToDoList.h"
 #include "Activity.h"
+#include "Controller.h"
 
 int main() {
     ToDoList list("sport");
-    Date date1(2021,8,25,16,30);
-    std::unique_ptr<Activity>task1;
-    task1->setDateOfDeadline(date1);
-    task1->setActivity("andare a comprare scarpe da calcio");
-    task1->setDone(false);
-    list.addActivity(std::move(task1));
+    Controller controller(&list);
+    controller.write(2021,8,25,16,30,"inizio allenamneti", false);
+    controller.write(2021,9,5,15,0,"inizio campionato",false);
 }
