@@ -18,7 +18,7 @@ public:
     void addActivity(std::unique_ptr<Activity> a);
     void removeActivity(std::unique_ptr<Activity> a);
     void clearAll();
-    void printActivity(std::unique_ptr<Activity> a);
+    void printDAyActivity(Date date);
     void printAllList();
 };
 

@@ -21,13 +21,15 @@ void ToDoList::clearAll() {
     list.clear();
 }
 
-void ToDoList::printActivity(std::unique_ptr<Activity> a) {
-    auto it =find(list.begin(),list.end(),a);
-    if (it != list.end()) {
-        std::cout << "Date of deadline: " << (a->getDateOfDeadline()).getDay() << "/"<< (a->getDateOfDeadline()).getMonth();
-        std::cout<<"/"<<(a->getDateOfDeadline()).getYear()<<std::endl;
-        std::cout<<"At: "<<(a->getDateOfDeadline()).getHour()<<":"<<(a->getDateOfDeadline()).getMinute()<<std::endl;
-        std::cout<<"Task: "<<a->getTask()<<std::endl;
+void ToDoList::printDAyActivity(Date date) {
+    for (auto it = list.begin(); it != list.end() ; ++it) {
+        Date date1=(*it)->getDateOfDeadline();
+        if (date==date1){
+            std::cout << "Date of deadline: " << ((*it)->getDateOfDeadline()).getDay() << "/"<< ((*it)->getDateOfDeadline()).getMonth();
+            std::cout<<"/"<<((*it)->getDateOfDeadline()).getYear()<<std::endl;
+            std::cout<<"At: "<<((*it)->getDateOfDeadline()).getHour()<<":"<<((*it)->getDateOfDeadline()).getMinute()<<std::endl;
+            std::cout<<"Task: "<<(*it)->getTask()<<std::endl;
+        }
     }
 }
 

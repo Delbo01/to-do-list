@@ -10,3 +10,10 @@ void Controller::write(int year, int month, int day, int hour, int minute, std::
     list->addActivity(std::move(task1));
 }
 
+void Controller::printDayTask(int year, int month,int day, int hour, int minute) {
+    Date date(year,month,day,hour,minute);
+    list->printDAyActivity(date);
+
+    }
+}
+

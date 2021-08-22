@@ -18,6 +18,17 @@ public:
     Date(int y,int m, int d,int h,int mi);
     ~Date()=default;
 
+    bool operator==(Date& that) {
+        if (year != that.year)
+            return false;
+        else if (month != that.month)
+            return false;
+        else if (day != that.day)
+            return false;
+        else
+            return true;
+    }
+
     int getYear() const {
         return year;
     }
