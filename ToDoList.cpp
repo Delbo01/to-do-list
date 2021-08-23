@@ -5,12 +5,13 @@
 #include <iostream>
 #include "ToDoList.h"
 
-void ToDoList::removeActivity(std::unique_ptr<Activity> a) {
-    auto it = find(list.begin(),list.end(),a);
+void ToDoList::removeActivity( std::unique_ptr<Activity> a) {
+    std::list<std::unique_ptr<Activity>>::iterator it;
+    it = find(list.begin(), list.end(), a);
     if (it != list.end())
-        list.remove(std::move(a));
+        list.remove(*it);
     else
-        std::cout<<"activity not found"<<std::endl;
+       std::cout<<"activity not found"<<std::endl;
 }
 
 void ToDoList::addActivity(std::unique_ptr<Activity> a) {

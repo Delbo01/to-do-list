@@ -18,8 +18,10 @@ int main() {
         std::unique_ptr<Activity>task2(new Activity(&date2,"babaganoush",false));
         list.addActivity(std::move(task2));
 
-        list.printDAyActivity(date1);
-        //list.printAllList();
+        //list.printDAyActivity(date1);
+        list.removeActivity(std::move(task1));
+        list.printAllList();
+
     }
     catch (std::out_of_range& e) {
         std::cerr<<e.what()<<std::endl;
