@@ -15,8 +15,8 @@ public:
     explicit Controller(ToDoList* list):list(list){}
     ~Controller()=default;
 
-    void write(int year,int month,int day,int hour,int minute, std::string task,bool done=false);
-    void printDayTask(int year,int month,int day,int hour, int minute);
+    void write(Date date, std::string task,bool done=false);
+    void printDayTask(Date date);
     void print();
 };
 
