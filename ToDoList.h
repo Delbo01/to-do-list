@@ -20,6 +20,7 @@ public:
     void clearAll();
     void printDAyActivity(Date date);
     void printAllList();
+    void sortList();
 };
 
 

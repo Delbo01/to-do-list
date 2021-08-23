@@ -29,6 +29,11 @@ public:
         else
             return false;
     }
+    bool operator<(const Activity& that){
+        Date date1= this->getDateOfDeadline();
+        Date date2= that.getDateOfDeadline();
+        return date1<date2;
+    }
 
     const Date &getDateOfDeadline() const {
         return *dateOfDeadline;

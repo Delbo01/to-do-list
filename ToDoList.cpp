@@ -46,4 +46,8 @@ void ToDoList::printAllList() {
     }
 }
 
+void ToDoList::sortList() {
+    list.sort();
+}
+
 

@@ -29,6 +29,21 @@ public:
             return true;
     }
 
+    bool operator<(Date& that){
+        if (year>that.year)
+            return false;
+        else if (month>that.month)
+            return false;
+        else if (day>that.day)
+            return false;
+        else if (hour>that.hour)
+            return false;
+        else if (minute>that.minute)
+            return false;
+        else
+            return true;
+    }
+
     int getYear() const {
         return year;
     }
