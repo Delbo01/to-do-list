@@ -18,7 +18,7 @@ public:
     Date(int y,int m, int d,int h,int mi);
     ~Date()=default;
 
-    bool operator==(Date& that) {
+    bool operator==(Date& that) const {
         if (year != that.year)
             return false;
         else if (month != that.month)

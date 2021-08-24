@@ -18,6 +18,18 @@ public:
     Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
     ~Activity()=default;
 
+    bool operator==(const Activity& that){
+        if ((*dateOfDeadline) == (*that.dateOfDeadline)) {
+            if (task == that.task) {
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+            return false;
+    }
+
     const Date &getDateOfDeadline() const {
         return *dateOfDeadline;
     }

@@ -2,20 +2,27 @@
 #include "Date.h"
 #include "ToDoList.h"
 #include "Activity.h"
-#include "Controller.h"
+
 
 int main() {
     ToDoList list;
-    Controller controller(&list);
     try {
-        Date date1(2021,8,25,16,30);
-        Date date2(2021,9,20,15,0);
-        controller.write(date1,"inizio allenamneti", false);
-        controller.write(date2,"inizio campionato",false);
+        Date date2(2021, 10, 5, 8, 30);
+        std::unique_ptr<Activity> task2(new Activity(&date2, "babaganoush", false));
+        list.addActivity(std::move(task2));
 
-        controller.print();
+        Date date1(2021, 9, 27, 0, 0);
+        std::unique_ptr<Activity> task1(new Activity(&date1, "compleanno", false));
+        list.addActivity(std::move(task1));
+
+        std::unique_ptr<Activity> task3(new Activity(&date1, "merda", false));
+        list.addActivity(std::move(task3));
+
+        list.printDAyActivity(date1);
+        list.printAllList();
+        list.clearAll();
     }
     catch (std::out_of_range &e) {
-        std::cerr<<e.what()<<std::endl;
+        std::cerr << e.what() << std::endl;
     }
 }
