@@ -37,12 +37,13 @@ void ToDoList::printDAyActivity(Date date) {
 }
 
 void ToDoList::printAllList() {
-    for (auto it = list.begin();it != list.end() ; it++) {
-        if ((*it)->isDone()== false){
-            std::cout<<"Date of deadline: "<<((*it)->getDateOfDeadline()).getDay()<<"/"<<((*it)->getDateOfDeadline()).getMonth();
-            std::cout<<"/"<<((*it)->getDateOfDeadline()).getYear()<<std::endl;
-            std::cout<<"At: "<<((*it)->getDateOfDeadline()).getHour()<<":"<<((*it)->getDateOfDeadline()).getMinute()<<std::endl;
-            std::cout<<"Task: "<<(*it)->getTask()<<std::endl;
+    for (auto& it :list) {
+        if (it->isDone()== false){
+            std::cout<<"Date of deadline: "<<((it)->getDateOfDeadline()).getDay()<<"/"<<((it)->getDateOfDeadline()).getMonth();
+            std::cout<<"/"<<((it)->getDateOfDeadline()).getYear()<<std::endl;
+            std::cout<<"At: "<<((it)->getDateOfDeadline()).getHour()<<":"<<((it)->getDateOfDeadline()).getMinute()<<std::endl;
+            std::cout<<"Task: "<<(it)->getTask()<<std::endl;
         }
     }
 }
+
