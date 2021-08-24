@@ -6,6 +6,7 @@
 #define TO_DO_LIST_ACTIVITY_H
 
 #include <string>
+#include <utility>
 #include "Date.h"
 
 
@@ -15,7 +16,7 @@ private:
     std::string task;
     bool done;
 public:
-    Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
+    Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(std::move(t)), done(done){}
     ~Activity()=default;
 
     bool operator==(const Activity& that){
