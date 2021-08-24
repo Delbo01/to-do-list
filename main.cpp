@@ -18,7 +18,9 @@ int main() {
         std::unique_ptr<Activity> task3(new Activity(&date3, "portare il gatto dal veterinario", false));
         list.addActivity(std::move(task3));
 
+        std::cout<<"The activity of day are: "<<std::endl;
         list.printDAyActivity(date1);
+        std::cout<<"All activity are: "<<std::endl;
         list.printAllList();
         list.clearAll();
     }
