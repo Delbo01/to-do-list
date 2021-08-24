@@ -7,15 +7,15 @@
 int main() {
     ToDoList list;
     try {
-        Date date2(2021, 10, 5, 8, 30);
-        std::unique_ptr<Activity> task2(new Activity(&date2, "babaganoush", false));
+        Date date2(2021, 9, 13, 0, 0);
+        std::unique_ptr<Activity> task2(new Activity(&date2, "appello lab.programmazione", false));
         list.addActivity(std::move(task2));
 
-        Date date1(2021, 9, 27, 0, 0);
-        std::unique_ptr<Activity> task1(new Activity(&date1, "compleanno", false));
+        Date date1(2021, 9, 1, 0, 0);
+        std::unique_ptr<Activity> task1(new Activity(&date1, "comprare regalo compleanno", false));
         list.addActivity(std::move(task1));
-
-        std::unique_ptr<Activity> task3(new Activity(&date1, "merda", false));
+        Date date3(2021,9,1,16,30);
+        std::unique_ptr<Activity> task3(new Activity(&date3, "portare il gatto dal veterinario", false));
         list.addActivity(std::move(task3));
 
         list.printDAyActivity(date1);
