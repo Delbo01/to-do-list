@@ -3,13 +3,14 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include "ToDoList.h"
 
-void ToDoList::removeActivity( std::unique_ptr<Activity> a) {
+void ToDoList::removeActivity(std::unique_ptr<Activity> a) {
     std::list<std::unique_ptr<Activity>>::iterator it;
     it = find(list.begin(), list.end(), a);
     if (it != list.end())
-        list.remove(*it);
+        list.remove(std::move(a));
     else
        std::cout<<"activity not found"<<std::endl;
 }
@@ -45,9 +46,3 @@ void ToDoList::printAllList() {
         }
     }
 }
-
-void ToDoList::sortList() {
-    list.sort();
-}
-
-

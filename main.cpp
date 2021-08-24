@@ -18,12 +18,10 @@ int main() {
         std::unique_ptr<Activity>task3(new Activity(&date1,"merda",false));
         list.addActivity(std::move(task3));
 
-        //list.printDAyActivity(date1);
-        //list.removeActivity(std::move(task1));
-        list.sortList();
+        list.printDAyActivity(date1);
+        list.removeActivity(std::move(task1));
         list.printAllList();
         list.clearAll();
-
     }
     catch (std::out_of_range& e) {
         std::cerr<<e.what()<<std::endl;
