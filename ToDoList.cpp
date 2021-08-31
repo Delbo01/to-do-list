@@ -32,6 +32,7 @@ void ToDoList::printDAyActivity(Date date) {
             std::cout<<"/"<<(it->getDateOfDeadline()).getYear()<<std::endl;
             std::cout<<"At: "<<(it->getDateOfDeadline()).getHour()<<":"<<(it->getDateOfDeadline()).getMinute()<<std::endl;
             std::cout<<"Task: "<<it->getTask()<<std::endl;
+            std::cout<<"Done: "<<it->isDone()<<std::endl;
         }
     }
 }
