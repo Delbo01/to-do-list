@@ -10,6 +10,8 @@
 #include "Date.h"
 
 
+
+
 class Activity{
 private:
     Date* dateOfDeadline;
@@ -17,6 +19,7 @@ private:
     bool done;
 public:
     Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(std::move(t)), done(done){}
+
     ~Activity()=default;
 
     bool operator==(const Activity& that){

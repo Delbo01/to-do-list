@@ -51,6 +51,8 @@ int main() {
         allList.printList("Default");
         std::cout<<"All list of list Acquisti are:"<<std::endl;
         allList.printList("Acquisti");
+
+        allList.printCountElementList();
     }
     catch (std::out_of_range &e) {
         std::cerr << e.what() << std::endl;

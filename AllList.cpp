@@ -31,3 +31,8 @@ void AllList::printDayActivity(Date date) {
         (it.second)->printDAyActivity(date);
 }
 
+void AllList::printCountElementList() {
+    for (auto it:allList)
+        std::cout<<"Count of task of list: "<<it.first<<" are "<<(it.second)->getCountElement()<<std::endl;
+}
+
