@@ -48,3 +48,7 @@ void ToDoList::printAllList() {
     }
 }
 
+const std::string &ToDoList::getTitle() const {
+    return title;
+}
+
