@@ -19,11 +19,11 @@ int main() {
 
         Date date2(2021, 9, 7, 14, 30);
         std::unique_ptr<Activity> task2(new Activity(&date2, "appello anaisi 1", false));
-        list1.addActivity(std::move(task1));
+        list1.addActivity(std::move(task2));
 
         Date date3(2021,9,20,8,40);
         std::unique_ptr<Activity> task3(new Activity(&date3,"inizio lezioni anno accademico 2021/2022", false));
-        list1.addActivity(std::move(task1));
+        list1.addActivity(std::move(task3));
 
         Date date4(2021, 9, 11, 16, 30);
         std::unique_ptr<Activity> task4(new Activity(&date4, "portare il gatto dal veterinario", false));
@@ -41,12 +41,15 @@ int main() {
         std::unique_ptr<Activity>task7(new Activity(&date7,"comprare sneakers",false));
         list2.addActivity(std::move(task7));
 
+        //list1.removeActivity(std::move(task2));
+        //task2->setDone(true);
+
         allList.add(&list1);
         allList.add(&list2);
         allList.add(&list3);
 
         std::cout<<"All activity of list Università are:"<<std::endl;
-        //allList.printList("Università");
+        allList.printList("Università");
         std::cout<<"All activity of list Default are:"<<std::endl;
         allList.printList("Default");
         std::cout<<"All list of list Acquisti are:"<<std::endl;
