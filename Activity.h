@@ -14,16 +14,16 @@
 
 class Activity{
 private:
-    Date* dateOfDeadline;
+    Date& dateOfDeadline;
     std::string task;
     bool done;
 public:
-    Activity(Date* d,std::string t, bool done): dateOfDeadline(d), task(std::move(t)), done(done){}
+    Activity( Date& d,std::string t, bool done): dateOfDeadline(d), task(std::move(t)), done(done){}
 
     ~Activity()=default;
 
     bool operator==(const Activity& that){
-        if ((*dateOfDeadline) == (*that.dateOfDeadline)) {
+        if ((dateOfDeadline) == (that.dateOfDeadline)) {
             if (task == that.task) {
                 return true;
             }
@@ -35,15 +35,15 @@ public:
     }
 
     const Date &getDateOfDeadline() const {
-        return *dateOfDeadline;
+        return dateOfDeadline;
     }
 
     void setDateOfDeadline(const Date &date) {
-        dateOfDeadline->setYear(date.getYear());
-        dateOfDeadline->setMonth(date.getMonth());
-        dateOfDeadline->setDay(date.getDay());
-        dateOfDeadline->setHour(date.getHour());
-        dateOfDeadline->setMinute(date.getMinute());
+        dateOfDeadline.setYear(date.getYear());
+        dateOfDeadline.setMonth(date.getMonth());
+        dateOfDeadline.setDay(date.getDay());
+        dateOfDeadline.setHour(date.getHour());
+        dateOfDeadline.setMinute(date.getMinute());
     }
 
     const std::string &getTask() const {
@@ -58,7 +58,7 @@ public:
         return done;
     }
 
-    void setDone(bool done) {
+    void setDone(bool done){
         Activity::done = done;
     }
 };

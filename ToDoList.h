@@ -18,8 +18,8 @@ public:
     explicit ToDoList(std::string title,int count=0): title(std::move(title)),countElement(count){}
     virtual ~ToDoList()=default;
 
-    void addActivity(std::unique_ptr<Activity> a);
-    void removeActivity(std::unique_ptr<Activity> a);
+    void addActivity(const Activity& a);
+    void removeActivity(const Activity &a);
     void printDAyActivity(Date date);
     void printAllList();
     const std::string &getTitle() const;

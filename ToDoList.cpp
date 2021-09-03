@@ -6,18 +6,20 @@
 #include <algorithm>
 #include "ToDoList.h"
 
-void ToDoList::removeActivity(std::unique_ptr<Activity> a) {
-    std::list<std::unique_ptr<Activity>>::iterator it;
-    it = find(list.begin(), list.end(), a);
-    if (it != list.end()) {
-        list.remove(a);
-        setCountElement(countElement--);
-    } else
-        std::cout << "activity not found" << std::endl;
+void ToDoList::removeActivity(const Activity &a) {
+    std::unique_ptr<Activity>task(new Activity(a));
+    //std::list<std::unique_ptr<Activity>>::iterator it;
+    //it = find(list.begin(), list.end(), task);
+    //if (it != list.end()) {
+    list.remove(std::move(task));
+    setCountElement(getCountElement()-1);
+   // } else
+    //    std::cout << "activity not found" << std::endl;
 }
 
-void ToDoList::addActivity(std::unique_ptr<Activity> a) {
-    list.push_back(std::move(a));
+void ToDoList::addActivity(const Activity& a) {
+    std::unique_ptr<Activity>task(new Activity(a));
+    list.push_back(std::move(task));
     setCountElement(getCountElement()+1);
 }
 
