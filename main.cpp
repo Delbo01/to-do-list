@@ -42,23 +42,24 @@ int main() {
         list2.addActivity(task7);
 
 
-        //list1.setTrueActivity(const_cast<Activity &>(task2));
-        list1.removeActivity(task2);
+        list1.setTrueActivity(const_cast<Activity &>(task2));
 
-        list1.printAllList();
 
         allList.add(&list1);
         allList.add(&list2);
         allList.add(&list3);
 
-        //std::cout<<"All activity of list Università are:"<<std::endl;
-        //allList.printList("Università");
-        //std::cout<<"All activity of list Default are:"<<std::endl;
-        //allList.printList("Default");
-        //std::cout<<"All list of list Acquisti are:"<<std::endl;
-        //allList.printList("Acquisti");
 
-        //allList.printCountElementList();
+
+        std::cout<<"All activity of list Università are:"<<std::endl;
+        allList.printList("Università");
+        std::cout<<"All activity of list Default are:"<<std::endl;
+        allList.printList("Default");
+        std::cout<<"All list of list Acquisti are:"<<std::endl;
+        allList.printList("Acquisti");
+
+        allList.ActivityToDo();
+        allList.ActivityNotToDo();
     }
     catch (std::out_of_range &e) {
         std::cerr << e.what() << std::endl;

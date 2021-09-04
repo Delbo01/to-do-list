@@ -13,9 +13,8 @@ class ToDoList{
 private:
     std::string title;
     std::list<std::unique_ptr<Activity>> list;
-    int countElement;
 public:
-    explicit ToDoList(std::string title,int count=0): title(std::move(title)),countElement(count){}
+    explicit ToDoList(std::string title): title(title){}
     virtual ~ToDoList()=default;
 
     void addActivity(const Activity& a);
@@ -24,7 +23,8 @@ public:
     void printAllList();
     void setTrueActivity(Activity&a);
     const std::string &getTitle() const;
-    int getCountElement() const;
+    int getActivityToDo() const;
+    int getActivityNotToDo()const;
     void setCountElement(int countElement);
 };
 

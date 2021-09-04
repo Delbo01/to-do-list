@@ -31,8 +31,13 @@ void AllList::printDayActivity(Date date) {
         (it.second)->printDAyActivity(date);
 }
 
-void AllList::printCountElementList() {
+void AllList::ActivityToDo() {
     for (auto it:allList)
-        std::cout<<"Count of task of list: "<<it.first<<" are "<<(it.second)->getCountElement()<<std::endl;
+        std::cout << "Count of task to do of list: " << it.first << " are " << (it.second)->getActivityToDo() << std::endl;
+}
+
+void AllList::ActivityNotToDo() {
+    for (auto it:allList)
+        std::cout << "Count of task not to do of list: " << it.first << " are " << (it.second)->getActivityNotToDo()<<std::endl;
 }
 

@@ -18,6 +18,7 @@ public:
     void remove(ToDoList* list);
     void printList(std::string title);
     void printDayActivity(Date date);
-    void printCountElementList();
+    void ActivityToDo();
+    void ActivityNotToDo();
 };
 #endif //TO_DO_LIST_ALLLIST_H
