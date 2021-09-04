@@ -8,13 +8,11 @@
 
 void ToDoList::removeActivity(const Activity &a) {
     std::unique_ptr<Activity>task(new Activity(a));
-    for (auto& it:list){
-        if (it == task)
-            list.remove(it);
+    for (auto& element:list) {
+        if (element==task)
+            list.remove(element);
+        setCountElement(getCountElement() - 1);
     }
-    setCountElement(getCountElement()-1);
-   // } else
-    //    std::cout << "activity not found" << std::endl;
 }
 
 void ToDoList::addActivity(const Activity& a) {
@@ -64,9 +62,15 @@ void ToDoList::setCountElement(int countElement) {
 }
 
 void ToDoList::setTrueActivity(Activity &a) {
+    Date date1(1,1,1,1,1);
+    Date date2(1,1,1,1,1);
+    date2= a.getDateOfDeadline();
     for (auto& element:list){
+        date1= element->getDateOfDeadline();
         if (element->getTask() == a.getTask())
-            element->setDone(true);
+            if (date1==date2)
+                element->setDone(true);
+
     }
 }
 

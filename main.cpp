@@ -42,7 +42,7 @@ int main() {
         list2.addActivity(task7);
 
 
-        list1.setTrueActivity(const_cast<Activity &>(task2));
+        //list1.setTrueActivity(const_cast<Activity &>(task2));
         list1.removeActivity(task2);
 
         list1.printAllList();
@@ -59,10 +59,6 @@ int main() {
         //allList.printList("Acquisti");
 
         //allList.printCountElementList();
-
-        if (task2.getTask() == task2.getTask())
-            std::cout << task2.getTask();
-        std::cout << "   vero";
     }
     catch (std::out_of_range &e) {
         std::cerr << e.what() << std::endl;
