@@ -14,9 +14,9 @@ public:
     AllList()=default;
     ~AllList()=default;
 
-    void add(ToDoList* list);
-    void remove(ToDoList* list);
-    void printList(std::string title);
+    void add( ToDoList *list);
+    void remove(ToDoList *list);
+    void printList(const std::string& title);
     void printDayActivity(Date date);
     void ActivityToDo();
     void ActivityNotToDo();

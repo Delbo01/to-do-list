@@ -5,7 +5,7 @@
 #include <iostream>
 #include "AllList.h"
 
-void AllList::add(ToDoList* list) {
+void AllList::add( ToDoList* list) {
     allList.insert(std::make_pair(list->getTitle(),list));
 }
 
@@ -18,7 +18,7 @@ void AllList::remove(ToDoList* list) {
 
 }
 
-void AllList::printList(std::string title) {
+void AllList::printList(const std::string& title) {
     auto it = allList.find(title);
     if (it != allList.end()){
         std::cout<<"Activities not done are:"<<std::endl;
@@ -36,12 +36,12 @@ void AllList::printDayActivity(Date date) {
 }
 
 void AllList::ActivityToDo() {
-    for (auto it:allList)
+    for (auto& it:allList)
         std::cout << "Count of task to do of list: " << it.first << " are " << (it.second)->getActivityToDo() << std::endl;
 }
 
 void AllList::ActivityNotToDo() {
-    for (auto it:allList)
+    for (auto& it:allList)
         std::cout << "Count of task not to do of list: " << it.first << " are " << (it.second)->getActivityNotToDo()<<std::endl;
 }
 

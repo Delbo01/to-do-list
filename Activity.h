@@ -9,9 +9,6 @@
 #include <utility>
 #include "Date.h"
 
-
-
-
 class Activity{
 private:
     Date& dateOfDeadline;

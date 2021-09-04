@@ -54,7 +54,7 @@ const std::string &ToDoList::getTitle() const {
 int ToDoList::getActivityToDo() const {
     int count=0;
     for (auto& element:list) {
-        if (element->isDone() == false)
+        if (!element->isDone())
             count++;
     }
     return count;
@@ -77,7 +77,7 @@ void ToDoList::setTrueActivity(Activity &a) {
 int ToDoList::getActivityNotToDo() const {
     int count=0;
     for (auto& element:list){
-        if (element->isDone()== true)
+        if (element->isDone())
             count++;
     }
     return count;
