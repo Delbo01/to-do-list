@@ -43,6 +43,8 @@ int main() {
 
 
         list1.setTrueActivity(const_cast<Activity &>(task2));
+        list2.setTrueActivity(const_cast<Activity&>(task7));
+        list3.setTrueActivity(const_cast<Activity&>(task4));
 
 
         allList.add(&list1);
@@ -51,11 +53,11 @@ int main() {
 
 
 
-        std::cout<<"All activity of list Università are:"<<std::endl;
+        std::cout<<"All activity of list Università:"<<std::endl;
         allList.printList("Università");
-        std::cout<<"All activity of list Default are:"<<std::endl;
+        std::cout<<"All activity of list Default:"<<std::endl;
         allList.printList("Default");
-        std::cout<<"All list of list Acquisti are:"<<std::endl;
+        std::cout<<"All activity of list Acquisti:"<<std::endl;
         allList.printList("Acquisti");
 
         allList.ActivityToDo();

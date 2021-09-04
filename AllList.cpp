@@ -20,8 +20,12 @@ void AllList::remove(ToDoList* list) {
 
 void AllList::printList(std::string title) {
     auto it = allList.find(title);
-    if (it != allList.end())
-        (it->second)->printAllList();
+    if (it != allList.end()){
+        std::cout<<"Activities not done are:"<<std::endl;
+        (it->second)->printActivitiesNotDone();
+        std::cout<<"Activities done are:"<<std::endl;
+        (it->second)->printActivitiesDone();
+    }
     else
         std::cout<<"list not found"<<std::endl;
 }

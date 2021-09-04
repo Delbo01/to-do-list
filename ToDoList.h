@@ -20,7 +20,8 @@ public:
     void addActivity(const Activity& a);
     void removeActivity(const Activity &a);
     void printDAyActivity(Date date);
-    void printAllList();
+    void printActivitiesNotDone();
+    void printActivitiesDone();
     void setTrueActivity(Activity&a);
     const std::string &getTitle() const;
     int getActivityToDo() const;

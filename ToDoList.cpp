@@ -36,7 +36,7 @@ void ToDoList::printDAyActivity(Date date) {
     }
 }
 
-void ToDoList::printAllList() {
+void ToDoList::printActivitiesNotDone() {
     for (auto &it :list) {
         if (!it->isDone()) {
             std::cout << "Date of deadline: " << ((it)->getDateOfDeadline()).getDay() << "/"
@@ -86,5 +86,18 @@ int ToDoList::getActivityNotToDo() const {
             count++;
     }
     return count;
+}
+
+void ToDoList::printActivitiesDone() {
+    for (auto &it :list) {
+        if (it->isDone()) {
+            std::cout << "Date of deadline: " << ((it)->getDateOfDeadline()).getDay() << "/"
+                      << ((it)->getDateOfDeadline()).getMonth();
+            std::cout << "/" << ((it)->getDateOfDeadline()).getYear() << std::endl;
+            std::cout << "At: " << ((it)->getDateOfDeadline()).getHour() << ":"
+                      << ((it)->getDateOfDeadline()).getMinute() << std::endl;
+            std::cout << "Task: " << (it)->getTask() << std::endl;
+        }
+    }
 }
 
