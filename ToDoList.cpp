@@ -11,13 +11,11 @@ void ToDoList::removeActivity(const Activity &a) {
     for (auto& element:list) {
         if (element==task)
             list.remove(element);
-        setCountElement(getActivityToDo() - 1);
     }
 }
 
 void ToDoList::addActivity(const Activity& a) {
     list.push_back(std::unique_ptr<Activity>(new Activity(a)));
-    setCountElement(getActivityToDo() + 1);
 }
 
 void ToDoList::printDAyActivity(Date date) {
@@ -62,9 +60,6 @@ int ToDoList::getActivityToDo() const {
     return count;
 }
 
-void ToDoList::setCountElement(int countElement) {
-
-}
 
 void ToDoList::setTrueActivity(Activity &a) {
     Date date1(1,1,1,1,1);

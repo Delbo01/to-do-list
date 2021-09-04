@@ -26,7 +26,7 @@ public:
     const std::string &getTitle() const;
     int getActivityToDo() const;
     int getActivityNotToDo()const;
-    void setCountElement(int countElement);
+
 };
 
 
