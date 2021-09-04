@@ -23,8 +23,8 @@ public:
     ~Activity()=default;
 
     bool operator==(const Activity& that){
-        if ((dateOfDeadline) == (that.dateOfDeadline)) {
-            if (task == that.task) {
+        if (task == that.getTask()){
+            if ((dateOfDeadline) == (that.dateOfDeadline)) {
                 return true;
             }
             else

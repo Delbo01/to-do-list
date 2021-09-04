@@ -8,18 +8,17 @@
 
 void ToDoList::removeActivity(const Activity &a) {
     std::unique_ptr<Activity>task(new Activity(a));
-    //std::list<std::unique_ptr<Activity>>::iterator it;
-    //it = find(list.begin(), list.end(), task);
-    //if (it != list.end()) {
-    list.remove(std::move(task));
+    for (auto& it:list){
+        if (it == task)
+            list.remove(it);
+    }
     setCountElement(getCountElement()-1);
    // } else
     //    std::cout << "activity not found" << std::endl;
 }
 
 void ToDoList::addActivity(const Activity& a) {
-    std::unique_ptr<Activity>task(new Activity(a));
-    list.push_back(std::move(task));
+    list.push_back(std::unique_ptr<Activity>(new Activity(a)));
     setCountElement(getCountElement()+1);
 }
 
@@ -63,3 +62,11 @@ int ToDoList::getCountElement() const {
 void ToDoList::setCountElement(int countElement) {
     ToDoList::countElement = countElement;
 }
+
+void ToDoList::setTrueActivity(Activity &a) {
+    for (auto& element:list){
+        if (element->getTask() == a.getTask())
+            element->setDone(true);
+    }
+}
+

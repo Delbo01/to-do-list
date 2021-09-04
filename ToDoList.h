@@ -22,10 +22,9 @@ public:
     void removeActivity(const Activity &a);
     void printDAyActivity(Date date);
     void printAllList();
+    void setTrueActivity(Activity&a);
     const std::string &getTitle() const;
-
     int getCountElement() const;
-
     void setCountElement(int countElement);
 };
 
