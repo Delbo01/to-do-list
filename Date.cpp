@@ -5,14 +5,10 @@
 #include "Date.h"
 
 void Date::setYear(int year) {
-    if (year < 0)
+    if (year < 0|| ((year%4)!=0 & day==29))
         throw (std::out_of_range("OUT OF RANGE"));
-    else if ((year % 4) != 0) {
-        if (month == 2)
-            if (day == 29)
-                throw (std::out_of_range("OUT OF RANGE"));
-    } else
-        Date::year = year;
+    else
+        Date::year=year;
 }
 
 void Date::setMonth(int month) {
