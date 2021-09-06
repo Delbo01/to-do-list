@@ -35,20 +35,8 @@ public:
         return dateOfDeadline;
     }
 
-    void setDateOfDeadline(const Date &date) {
-        dateOfDeadline.setYear(date.getYear());
-        dateOfDeadline.setMonth(date.getMonth());
-        dateOfDeadline.setDay(date.getDay());
-        dateOfDeadline.setHour(date.getHour());
-        dateOfDeadline.setMinute(date.getMinute());
-    }
-
     const std::string &getTask() const {
         return task;
-    }
-
-    void setActivity(const std::string &activity) {
-        Activity::task = activity;
     }
 
     bool isDone() const {
