@@ -6,14 +6,17 @@
 #include <algorithm>
 #include "ToDoList.h"
 
+
 void ToDoList::removeActivity(const Activity &a) {
-    std::unique_ptr<Activity>task(new Activity(a));
+    Date date2(1,1,1,1,1);
+    date2= a.getDateOfDeadline();
     for (auto& element:list) {
-        if (element==task)
-            list.remove(element);
+        std::string task=element->getTask();
+        if (task==a.getTask())
+            if (element->getDateOfDeadline()==date2)
+                list.remove(element);
     }
 }
-
 void ToDoList::addActivity(const Activity& a) {
     list.push_back(std::unique_ptr<Activity>(new Activity(a)));
 }
@@ -95,4 +98,3 @@ void ToDoList::printActivitiesDone() {
         }
     }
 }
-

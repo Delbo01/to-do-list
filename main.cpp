@@ -52,7 +52,6 @@ int main() {
         allList.add(&list3);
 
 
-
         std::cout<<"All activity of list Università:"<<std::endl;
         allList.printList("Università");
         std::cout<<"All activity of list Default:"<<std::endl;
