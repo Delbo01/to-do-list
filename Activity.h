@@ -15,7 +15,7 @@ private:
     std::string task;
     bool done;
 public:
-    Activity( Date& d,std::string t, bool done): dateOfDeadline(d), task(std::move(t)), done(done){}
+    Activity( Date& d,std::string t, bool done): dateOfDeadline(d), task(t), done(done){}
 
     ~Activity()=default;
 
