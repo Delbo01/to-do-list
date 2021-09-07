@@ -19,9 +19,9 @@ public:
 
     void addActivity(const Activity& a);
     void removeActivity(const Activity &a);
-    void printDAyActivity(Date date);
-    void printActivitiesNotDone();
-    void printActivitiesDone();
+    void printDAyActivity(Date date)const;
+    void printActivitiesNotDone()const;
+    void printActivitiesDone()const;
     void setTrueActivity(Activity&a);
     const std::string &getTitle() const;
     int getActivityToDo() const;

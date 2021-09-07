@@ -18,7 +18,7 @@ void AllList::remove(ToDoList* list) {
 
 }
 
-void AllList::printList(const std::string& title) {
+void AllList::printList(const std::string& title)const {
     auto it = allList.find(title);
     if (it != allList.end()){
         std::cout<<"Activities not done are:"<<std::endl;
@@ -30,17 +30,17 @@ void AllList::printList(const std::string& title) {
         std::cout<<"list not found"<<std::endl;
 }
 
-void AllList::printDayActivity(Date date) {
+void AllList::printDayActivity(Date date) const{
     for (auto it: allList)
         (it.second)->printDAyActivity(date);
 }
 
-void AllList::ActivityToDo() {
+void AllList::ActivityToDo() const{
     for (auto& it:allList)
         std::cout << "Count of task to do of list: " << it.first << " are " << (it.second)->getActivityToDo() << std::endl;
 }
 
-void AllList::ActivityNotToDo() {
+void AllList::ActivityNotToDo()const {
     for (auto& it:allList)
         std::cout << "Count of task not to do of list: " << it.first << " are " << (it.second)->getActivityNotToDo()<<std::endl;
 }

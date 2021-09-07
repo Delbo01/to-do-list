@@ -16,9 +16,9 @@ public:
 
     void add( ToDoList *list);
     void remove(ToDoList *list);
-    void printList(const std::string& title);
-    void printDayActivity(Date date);
-    void ActivityToDo();
-    void ActivityNotToDo();
+    void printList(const std::string& title)const;
+    void printDayActivity(Date date)const;
+    void ActivityToDo()const;
+    void ActivityNotToDo()const;
 };
 #endif //TO_DO_LIST_ALLLIST_H

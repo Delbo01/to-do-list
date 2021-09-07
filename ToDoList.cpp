@@ -21,7 +21,7 @@ void ToDoList::addActivity(const Activity& a) {
     list.push_back(std::unique_ptr<Activity>(new Activity(a)));
 }
 
-void ToDoList::printDAyActivity(Date date) {
+void ToDoList::printDAyActivity(Date date) const{
     Date date1(1, 1, 1, 0, 0);
     for (auto &it : list) {
         date1 = it->getDateOfDeadline();
@@ -37,7 +37,7 @@ void ToDoList::printDAyActivity(Date date) {
     }
 }
 
-void ToDoList::printActivitiesNotDone() {
+void ToDoList::printActivitiesNotDone() const{
     for (auto &it :list) {
         if (!it->isDone()) {
             std::cout << "Date of deadline: " << ((it)->getDateOfDeadline()).getDay() << "/"
@@ -86,7 +86,7 @@ int ToDoList::getActivityNotToDo() const {
     return count;
 }
 
-void ToDoList::printActivitiesDone() {
+void ToDoList::printActivitiesDone() const{
     for (auto &it :list) {
         if (it->isDone()) {
             std::cout << "Date of deadline: " << ((it)->getDateOfDeadline()).getDay() << "/"
