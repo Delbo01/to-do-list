@@ -31,7 +31,7 @@ void AllList::printList(const std::string& title)const {
 }
 
 void AllList::printDayActivity(Date date) const{
-    for (auto it: allList)
+    for (auto& it: allList)
         (it.second)->printDAyActivity(date);
 }
 
