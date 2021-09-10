@@ -4,15 +4,14 @@
 #include "gtest/gtest.h"
 #include "../ToDoList.h"
 
-TEST(toDoList_test,addActicity_test){
+TEST(toDoList_test,addActivity_test){
     ToDoList list("hobby");
     Date date(2021,9,27,9,30);
     const Activity& a= Activity(date,"partita calcetto", false);
     const Activity& a1= Activity(date,"portare casacche",true);
     list.addActivity(a);
     list.addActivity(a1);
-    ASSERT_EQ(1,list.getActivityToDo());
-    ASSERT_EQ(1,list.getActivityNotToDo());
+    ASSERT_EQ(2, list.sizeList());
 }
 TEST(toDoList_test,getActivityToDo_test){
     ToDoList list("hobby");

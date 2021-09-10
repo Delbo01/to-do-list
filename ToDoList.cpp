@@ -98,3 +98,7 @@ void ToDoList::printActivitiesDone() const{
         }
     }
 }
+
+int ToDoList::sizeList() const {
+    return list.size();
+}

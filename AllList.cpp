@@ -45,7 +45,7 @@ void AllList::ActivityNotToDo()const {
         std::cout << "Count of task not to do of list: " << it.first << " are " << (it.second)->getActivityNotToDo()<<std::endl;
 }
 
-int AllList::size() {
+int AllList::size()const {
     return allList.size();
 }
 
