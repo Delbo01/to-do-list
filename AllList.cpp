@@ -30,7 +30,7 @@ void AllList::printList(const std::string& title)const {
         std::cout<<"list not found"<<std::endl;
 }
 
-void AllList::printDayActivity(Date date) const{
+void AllList::printDayActivity(const Date &date) const{
     for (auto& it: allList)
         (it.second)->printDAyActivity(date);
 }

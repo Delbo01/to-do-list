@@ -19,7 +19,7 @@ public:
 
     void addActivity(const Activity& a);
     void removeActivity(const Activity &a);
-    void printDAyActivity(Date date)const;
+    void printDAyActivity(const Date &date)const;
     void printActivitiesNotDone()const;
     void printActivitiesDone()const;
     void setTrueActivity(Activity&a);

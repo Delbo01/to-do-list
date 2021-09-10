@@ -21,7 +21,7 @@ void ToDoList::addActivity(const Activity& a) {
     list.push_back(std::unique_ptr<Activity>(new Activity(a)));
 }
 
-void ToDoList::printDAyActivity(Date date) const{
+void ToDoList::printDAyActivity(const Date &date) const{
     Date date1(1, 1, 1, 0, 0);
     for (auto &it : list) {
         date1 = it->getDateOfDeadline();

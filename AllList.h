@@ -17,7 +17,7 @@ public:
     void add( ToDoList *list);
     void remove(ToDoList *list);
     void printList(const std::string& title)const;
-    void printDayActivity(Date date)const;
+    void printDayActivity(const Date &date)const;
     void ActivityToDo()const;
     void ActivityNotToDo()const;
 };

@@ -5,7 +5,7 @@
 #include "Date.h"
 
 void Date::setYear(int year) {
-    if (year < 0|| ((year%4)!=0 & day==29))
+    if (year < 0|| ((year%4)!=0 & day==29 & month==2))
         throw (std::out_of_range("OUT OF RANGE"));
     else
         Date::year=year;
@@ -76,5 +76,3 @@ Date::Date(int y, int m, int d, int h, int mi) {
     setHour(h);
     setMinute(mi);
 }
-
-
