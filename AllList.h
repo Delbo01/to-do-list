@@ -20,5 +20,6 @@ public:
     void printDayActivity(const Date &date)const;
     void ActivityToDo()const;
     void ActivityNotToDo()const;
+    int size();
 };
 #endif //TO_DO_LIST_ALLLIST_H
