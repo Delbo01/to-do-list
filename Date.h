@@ -14,6 +14,7 @@ private:
     int day;
     int hour;
     int minute;
+    bool isValid() const;
 public:
     Date(int y,int m, int d,int h,int mi);
     ~Date()=default;
