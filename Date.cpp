@@ -7,9 +7,10 @@
 void Date::setYear(int year) {
     if (year < 0 || ((year % 4) != 0 & day == 29 & month == 2))
         throw (std::out_of_range("OUT OF RANGE"));
-    else
+    else {
         Date::year = year;
-    isValid();
+        isValid();
+    }
 }
 
 void Date::setMonth(int month) {
@@ -22,9 +23,10 @@ void Date::setMonth(int month) {
     } else if (day == 31) {
         if (month == 4 || month == 6 || month == 9 || month == 11)
             throw (std::out_of_range("OUT OF RANGE"));
-    } else
+    } else {
         Date::month = month;
-    isValid();
+        isValid();
+    }
 }
 
 void Date::setDay(int day) {
@@ -46,10 +48,11 @@ void Date::setDay(int day) {
                 Date::day = day;
         } else if (day <= 0 || day >= 29) {
             throw (std::out_of_range("OUT OF RANGE"));
-        } else
+        } else {
             Date::day = day;
+            isValid();
+        }
     }
-    isValid();
 }
 
 void Date::setHour(int hour) {
