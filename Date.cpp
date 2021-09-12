@@ -5,69 +5,60 @@
 #include "Date.h"
 
 void Date::setYear(int year) {
-    if (year < 0 || ((year % 4) != 0 & day == 29 & month == 2))
-        throw (std::out_of_range("OUT OF RANGE"));
-    else {
-        Date::year = year;
-        isValid();
-    }
+    Date::year = year;
+    isValid();
 }
 
 void Date::setMonth(int month) {
-    if (month <= 0 || month >= 13)
-        throw std::out_of_range("OUT OF RANGE");
-    else if (day == 29) {
-        if ((year % 4) != 0)
-            if (month == 2)
-                throw (std::out_of_range("OUT OF RANGE"));
-    } else if (day == 31) {
-        if (month == 4 || month == 6 || month == 9 || month == 11)
-            throw (std::out_of_range("OUT OF RANGE"));
-    } else {
-        Date::month = month;
-        isValid();
-    }
+    Date::month = month;
+    isValid();
 }
 
 void Date::setDay(int day) {
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-        if (day <= 0 || day >= 32)
-            throw (std::out_of_range("OUT OF RANGE"));
-        else
-            Date::day = day;
-    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-        if (day <= 0 || day >= 31)
-            throw std::out_of_range("OUT OF RANGE");
-        else
-            Date::day = day;
-    } else if (month == 2) {
-        if ((year % 4) == 0) {
-            if (day <= 0 || day >= 30)
-                throw (std::out_of_range("OUT OF RANGE"));
-            else
-                Date::day = day;
-        } else if (day <= 0 || day >= 29) {
-            throw (std::out_of_range("OUT OF RANGE"));
-        } else {
-            Date::day = day;
-            isValid();
-        }
-    }
+    Date::day = day;
+    isValid();
 }
 
 void Date::setHour(int hour) {
-    if (hour < 0 || hour > 23)
-        throw (std::out_of_range("OUT OF RANGE"));
-    else
-        Date::hour = hour;
+    Date::hour = hour;
+    isValid();
 }
 
 void Date::setMinute(int minute) {
+    Date::minute = minute;
+    isValid();
+}
+
+bool Date::isValid() const {
+    if (year < 0)
+        throw (std::out_of_range("OUT OF RANGE"));
+    if (month<=0||month>=13)
+        throw (std::out_of_range("OUT OF RANGE"));
+    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+        if (day <= 0 || day >= 32) {
+            throw (std::out_of_range("OUT OF RANGE"));
+        }
+    }
+    else if (month == 4 || month == 6 || month == 9 || month == 11) {
+        if (day <= 0 || day >= 31)
+            throw (std::out_of_range("OUT OF RANGE"));
+
+    } else if (month == 2) {
+        if ((year % 4) != 0) {
+            if (day <= 0 || day >= 29)
+                throw (std::out_of_range("OUT OF RANGE"));
+        } else {
+            if (day <= 0 || day >= 30)
+                throw (std::out_of_range("OUT OF RANGE"));
+        }
+    }
+    if (hour < 0 || hour > 23)
+        throw (std::out_of_range("OUT OF RANGE"));
     if (minute < 0 || minute > 59)
         throw (std::out_of_range("OUT OF RANGE"));
-    else
-        Date::minute = minute;
+    return true;
 }
+
 
 Date::Date(int y, int m, int d, int h, int mi) {
     year = 1;
@@ -80,27 +71,4 @@ Date::Date(int y, int m, int d, int h, int mi) {
     setDay(d);
     setHour(h);
     setMinute(mi);
-}
-
-bool Date::isValid() const {
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-        if (day <= 0 || day >= 32) {
-            throw (std::out_of_range("OUT OF RANGE"));
-        }
-    } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-        if (day <= 0 || day >= 31)
-            throw (std::out_of_range("OUT OF RANGE"));
-
-    } else if (month == 2) {
-        if ((year%4)!=0){
-            if (day <= 0 || day >= 29)
-                throw (std::out_of_range("OUT OF RANGE"));
-        }
-        else{
-            if (day<=0||day>=30)
-                throw (std::out_of_range("OUT OF RANGE"));
-        }
-
-    }
-    return true;
 }

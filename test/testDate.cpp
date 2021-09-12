@@ -30,7 +30,7 @@ TEST(month_test,setMonth_test){
     ASSERT_NO_THROW(date2.setMonth(7));
 }
 TEST(day_test,setDay_test){
-    Date date(2001,3,29,2,34);
+    Date date(2001,4,2,2,34);
     if (  date.getMonth()==4||date.getMonth()==6||date.getMonth()==9||date.getMonth()==11){
         ASSERT_THROW(date.setDay(31),std::out_of_range);
         ASSERT_NO_THROW(date.setDay(30));
@@ -40,11 +40,11 @@ TEST(day_test,setDay_test){
         ASSERT_THROW(date.setDay(32),std::out_of_range);
         ASSERT_NO_THROW(date.setDay(31));
     }
-    date.setMonth(2);
-    if (date.getMonth()==2){
-        ASSERT_THROW(date.setDay(29),std::out_of_range);
-        date.setYear(2000);
-        ASSERT_NO_THROW(date.setDay(29));
+    Date date1(2001,2,4,0,0);
+    if (date1.getMonth()==2){
+        ASSERT_THROW(date1.setDay(29),std::out_of_range);
+        date1.setYear(2000);
+        ASSERT_NO_THROW(date1.setDay(29));
     }
 }
 TEST(hour_test,setHour_test){
